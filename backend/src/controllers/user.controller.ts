@@ -1,11 +1,10 @@
 import { type Request, type Response } from "express"
-import { createUserSchema, createTicketSchema, TicketAnalysisSchema, loginUserSchema } from 
-import { checkPassword, hashPassword } from "../utils/jwt.js"
 import { ApiError } from "../utils/ApiError.js"
-import { generateAccessToken, generateRefreshToken } from '../utils/jwt.js'
 import { ApiResponse } from "../utils/ApiResponse.js"
 import asyncHandler from "../utils/asyncHandler.js"
 import { prisma } from "../lib/prisma.js"
+import { checkPassword,generateAccessToken,generateRefreshToken,hashPassword } from "../utils/jwt.js"
+import { createUserSchema, loginUserSchema } from "../schemas/zod.schemas.js"
 
 
 const generateAccessAndRefreshToken = async (userId: number): Promise<{ accessToken: string, refreshToken: string }> => {

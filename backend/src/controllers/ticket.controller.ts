@@ -4,8 +4,8 @@ import { analyzeTicket } from "../services/ai.service.js"
 import { ApiError } from "../utils/ApiError.js"
 import { ApiResponse } from "../utils/ApiResponse.js"
 import asyncHandler from "../utils/asyncHandler.js"
-import { redisClient } from "../../lib/redis.js"
 import { prisma } from "../lib/prisma.js"
+import { redisClient } from "../lib/redis.js"
 
 
 const createTicket = asyncHandler(async (req: Request, res: Response) => {

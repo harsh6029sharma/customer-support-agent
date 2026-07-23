@@ -16,7 +16,6 @@ const createTicket = asyncHandler(async (req: Request, res: Response) => {
 
     console.log(decodedToken)
 
-
     const aiResult = await analyzeTicket(ticketValidationData.description, decodedToken?.id)
 
     if (!aiResult) {
